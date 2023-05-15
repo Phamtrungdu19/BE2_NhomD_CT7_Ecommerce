@@ -1,0 +1,1 @@
+<h1>Trang Home</h1><?php /**PATH D:\DEAN\BE2_NhomD_CT7_Ecommerce\resources\views/home.blade.php ENDPATH**/ ?>

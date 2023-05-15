@@ -1,0 +1,1 @@
+<?php /**PATH D:\DEAN\BE2_NhomD_CT7_Ecommerce\resources\views/frontend/index.blade.php ENDPATH**/ ?>
