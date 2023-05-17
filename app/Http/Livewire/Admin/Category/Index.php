@@ -2,12 +2,20 @@
 
 namespace App\Http\Livewire\Admin\Category;
 
+use App\Models\Category;
+use Illuminate\Foundation\Testing\WithFaker;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Index extends Component
 {
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+
     public function render()
     {
-        return view('livewire.admin.category.index');
+        $categories = Category::orderBy('id', 'DESC')->paginate(10);
+
+        return view('livewire.admin.category.index', ['categories' => $categories]);
     }
 }
