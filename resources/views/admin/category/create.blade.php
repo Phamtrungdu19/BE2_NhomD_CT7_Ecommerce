@@ -39,7 +39,7 @@
             </div>
             <div class="col-md-12 mb-3">
               <label>Meta Title</label>
-              <input type="text" name="meta_title" class="form-control" rows="3"> </textarea>
+              <input type="text" name="meta_title" class="form-control" rows="3">
             </div>
             <div class="col-md-12 mb-3">
               <label>Meta Keyword</label>

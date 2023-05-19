@@ -24,7 +24,8 @@
                             <td>{{$category->status == '1'?'Hiden':'Visible'}}</td>
                             <td>
                                 <a href="{{url('admin/category/'.$category->id.'/edit')}}" class="btn btn-success">Edit</a>
-                                <a href="" class="btn btn-danger">Delete</a>
+
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                         @endforeach
