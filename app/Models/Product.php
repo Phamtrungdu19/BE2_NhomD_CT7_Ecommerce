@@ -29,8 +29,9 @@ class Product extends Model
         'meta_description'
     ];
 
-    public function productImages()
+
+    public function productsImages()
     {
-        return $this->hasMany(ProductImage::class, 'product_id', 'id');
+        return $this->hasMany(Product::class, 'product_id', 'id');
     }
 }

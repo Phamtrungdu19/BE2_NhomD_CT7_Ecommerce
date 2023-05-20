@@ -38,7 +38,7 @@ class ProductController extends Controller
             'original_price' => $validateData['original_price'],
             'selling_price' => $validateData['selling_price'],
             'quantity' => $validateData['quantity'],
-            'trending' => $request->trending == true ? '1' : '0',
+            'trending' => $request->trend == true ? '1' : '0',
             'status' =>  $request->status == true ? '1' : '0',
             'meta_title' => $validateData['meta_title'],
             'meta_keyword' => $validateData['meta_keyword'],
