@@ -81,9 +81,9 @@ class ProductFormRequest extends FormRequest
             ],
             'image' => [
                 'nullable',
-                'mimes:jpg,jpe,png'
+                // 'mimes:jpg,jpe,png'
 
-            ],
+            ]
         ];
     }
 }

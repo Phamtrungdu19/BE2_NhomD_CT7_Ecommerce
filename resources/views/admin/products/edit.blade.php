@@ -13,9 +13,9 @@
         </h4>
       </div>
       <div class="card-body">
-        <form action="{{url('admin/products')}}" method="POST" enctype="multipart/form-data">
+        <form action="{{url('admin/products/'.$product->id)}}" method="POST" enctype="multipart/form-data">
           @csrf
-
+            @method(PUT)
           <ul class="nav nav-tabs" id="nav-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Home</button>

@@ -15,7 +15,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('admin.products.index');
+        $products = Product::all();
+        return view('admin.products.index', compact('products'));
     }
 
     public function create()
@@ -54,7 +55,7 @@ class ProductController extends Controller
                 $imageFile->move($uploadPath, $filename);
                 $finalImagePathName = $uploadPath . '.' . $filename;
 
-                $product->productImages()->create([
+                $product->productsImages()->create([
                     'product_id' => $product->id,
                     'image' => $finalImagePathName,
                 ]);
@@ -62,5 +63,15 @@ class ProductController extends Controller
         }
         //return $product->id;
         return redirect('/admin/products')->with('message', 'Product Add Succed');
+    }
+
+
+
+    public function FunctionName(int $product_id)
+    {
+        $categories = Category::all();
+        $brands = Brand::all();
+        $product = Product::findOrFail($product_id);
+        return view('admin.products.edit');
     }
 }
