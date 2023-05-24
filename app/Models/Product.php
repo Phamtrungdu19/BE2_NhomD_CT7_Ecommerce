@@ -13,10 +13,6 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $table = 'products';
-    
-    
-
 
     protected $table = 'products';
 
@@ -46,4 +42,5 @@ class Product extends Model
     public function productsImages()
     {
         return $this->hasMany(ProductImage::class, 'product_id', 'id');
-
+    }
+}

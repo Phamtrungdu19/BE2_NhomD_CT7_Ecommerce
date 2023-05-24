@@ -26,7 +26,6 @@
                         <tbody>
                             @forelse($brands as $brand)
 
-
                             <tr>
                                 <td>{{$brand->id}}</td>
                                 <td>{{$brand->name}}</td>

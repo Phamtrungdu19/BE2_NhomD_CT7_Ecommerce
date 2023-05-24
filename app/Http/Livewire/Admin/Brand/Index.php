@@ -50,7 +50,6 @@ class Index extends Component
     {
         $brands = Brand::orderBy('id', 'DESC')->paginate(10);
 
-        return view('livewire.admin.brand.index', ['brands' => $brands])
-            ->extends('layouts.admin')->section('content');
+        return view('livewire.admin.brand.index', ['brands' => $brands]);
     }
 }
