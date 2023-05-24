@@ -29,12 +29,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
-    Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class);
+    //Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class);
     //Category Router
     Route::controller(App\Http\Controllers\Admin\SliderController::class)->group(function () {
         Route::get('/sliders', 'index');
         Route::get('/sliders/create', 'create');
         Route::post('/sliders/store', 'store');
+    });
+
+    Route::controller(App\Http\Controllers\Admin\BrandController::class)->group(function () {
+        Route::get('/brands/', 'index');
+        Route::get('/brands/create', 'create');
+        Route::post('/brands', 'store');
     });
 
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function () {
@@ -51,6 +57,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::post('/products', 'store');
         Route::get('/products/{product}/edit', 'edit');
         Route::put('/products/{product}', 'update');
+        Route::get('products/{id}/delete', 'destroy');
         Route::get('product-image/{product_image_id}/delete', 'destroyImage');
     });
 });

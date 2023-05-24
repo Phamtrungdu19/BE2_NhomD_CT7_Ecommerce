@@ -134,4 +134,22 @@ class ProductController extends Controller
 
         return redirect()->back();
     }
+
+
+    public function destroy(int $id)
+    {
+
+        $product = Product::findOrFail($id);
+        if ($product->productsImages) {
+            foreach ($product->productsImages as $image) {
+                if (File::exists($image->image)) {
+                    File::delete($image->image);
+                }
+                $image->delete();
+            }
+        }
+        $product->delete();
+        return redirect()->back()->with('message', 'Product delete');
+    }
 }
+
