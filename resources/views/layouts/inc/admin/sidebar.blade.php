@@ -7,7 +7,8 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+                aria-controls="ui-basic">
                 <i class="mdi mdi-circle-outline menu-icon"></i>
                 <span class="menu-title">Sale</span>
                 <i class="menu-arrow"></i>
@@ -33,7 +34,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="{{ url('admin/brands') }}">
                 <i class="mdi mdi-grid-large menu-icon"></i>
                 <span class="menu-title">Brands</span>
             </a>
@@ -42,6 +43,12 @@
             <a class="nav-link" href="pages/icons/mdi.html">
                 <i class="mdi mdi-emoticon menu-icon"></i>
                 <span class="menu-title">Users</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/sliders') }}">
+                <i class="mdi mdi-grid-large menu-icon"></i>
+                <span class="menu-title">Slider</span>
             </a>
         </li>
         <li class="nav-item">

@@ -20,6 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
+Route::get('collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
@@ -27,6 +31,11 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 
     Route::get('/brands', App\Http\Livewire\Admin\Brand\Index::class);
     //Category Router
+    Route::controller(App\Http\Controllers\Admin\SliderController::class)->group(function () {
+        Route::get('/sliders', 'index');
+        Route::get('/sliders/create', 'create');
+        Route::post('/sliders/store', 'store');
+    });
 
     Route::controller(App\Http\Controllers\Admin\CategoryController::class)->group(function () {
         Route::get('/category', 'index');
