@@ -1,7 +1,7 @@
 <?php
 
 
-    //
+//
 
 namespace App\Http\Controllers\Admin;
 
@@ -55,7 +55,7 @@ class ProductController extends Controller
             $uploadPath = 'uploads/products/';
             foreach ($request->file('image') as $imageFile) {
                 $extention = $imageFile->getClientOriginalExtension();
-                $filename = time() . '.' . $extention;
+                $filename = time() . $extention;
                 $imageFile->move($uploadPath, $filename);
                 $finalImagePathName = $uploadPath . $filename;
 

@@ -32,13 +32,16 @@ class CategoryController extends Controller
         $category->name = $validatedData['name'];
         $category->slug = Str::slug($validatedData['slug']);
         $category->description = $validatedData['description'];
+
         if ($request->hasFile('image')) {
+            $uploafPath = 'uploads/category/';
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
+            $filename = time()  . $ext;
             $file->move('uploads/category/', $filename);
-            $category->image = $validatedData['image'];
+            $category->image =  $uploafPath . $filename;
         }
+
         $category->meta_title = $validatedData['meta_title'];
         $category->meta_keyword = $validatedData['meta_keyword'];
         $category->meta_description = $validatedData['meta_description'];
@@ -61,7 +64,7 @@ class CategoryController extends Controller
         $category->name = $validatedData['name'];
         $category->slug = Str::slug($validatedData['slug']);
         $category->description = $validatedData['description'];
-
+        $uploafPath = 'uploads/category/';
         if ($request->hasFile('image')) {
 
             $path = 'uploads/category/' . $category->image;
@@ -70,9 +73,9 @@ class CategoryController extends Controller
             }
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
+            $filename = time() . $ext;
             $file->move('uploads/category/', $filename);
-            $category->image = $validatedData['image'];
+            $category->image = $uploafPath . $filename;
         }
         $category->meta_title = $validatedData['meta_title'];
         $category->meta_keyword = $validatedData['meta_keyword'];
