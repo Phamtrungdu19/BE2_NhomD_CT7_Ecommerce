@@ -40,6 +40,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/products', 'index');
         Route::get('/products/create', 'create');
         Route::post('/products', 'store');
-        Route::put('/products/{product}/edit', 'edit');
+        Route::get('/products/{product}/edit', 'edit');
+        Route::put('/products/{product}', 'update');
+        Route::get('product-image/{product_image_id}/delete', 'destroyImage');
     });
 });

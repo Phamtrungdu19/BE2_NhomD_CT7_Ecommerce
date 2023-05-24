@@ -102,14 +102,14 @@
                 </div>
                 <div class="col-md-4">
                   <div class="md-3">
-                    <label> trending</label>
-                    <input type="checkbox" name="trending" class="form-control" style="width: 50px ; height: 50px">
+                    <label> trending</label><br>
+                    <input type="checkbox" name="trending"  style="width: 50px ; height: 50px">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="md-3">
-                    <label> Status</label>
-                    <input type="checkbox" name="status" class="form-control" style="width: 50px ; height: 50px">
+                    <label> Status</label><br>
+                    <input type="checkbox" name="status"  style="width: 50px ; height: 50px">
                   </div>
                 </div>
               </div>
