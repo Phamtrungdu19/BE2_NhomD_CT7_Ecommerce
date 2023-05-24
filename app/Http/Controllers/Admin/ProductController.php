@@ -55,7 +55,7 @@ class ProductController extends Controller
             $uploadPath = 'uploads/products/';
             foreach ($request->file('image') as $imageFile) {
                 $extention = $imageFile->getClientOriginalExtension();
-                $filename = time() . '.' . $extention;
+                $filename = time() . $extention;
                 $imageFile->move($uploadPath, $filename);
                 $finalImagePathName = $uploadPath . $filename;
 
@@ -135,6 +135,7 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
+
     public function destroy(int $id)
     {
 
@@ -151,3 +152,4 @@ class ProductController extends Controller
         return redirect()->back()->with('message', 'Product delete');
     }
 }
+

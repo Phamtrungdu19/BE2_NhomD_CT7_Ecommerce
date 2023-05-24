@@ -13,7 +13,7 @@ class Product extends Model
 {
     use HasFactory;
 
-
+    
     protected $table = 'products';
 
     protected $fillable = [
@@ -30,7 +30,6 @@ class Product extends Model
         'status',
         'meta_title',
         'meta_keyword',
-
         'meta_description'
     ];
 
