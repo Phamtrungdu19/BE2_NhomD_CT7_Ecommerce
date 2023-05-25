@@ -17,3 +17,4 @@ class Slider extends Model
         'status'
     ];
 }
+
