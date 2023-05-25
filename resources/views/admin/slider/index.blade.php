@@ -38,7 +38,7 @@
                                 <td>{{$slider->title}}</td>
                                 <td>{{$slider->description}}</td>
                                 <td>
-                                    <img src="{{asset("$slider->image ")}}" style="width: 150px;height: 150px;"
+                                    <img src="{{asset($slider->image)}}" style="width: 150px;height: 150px;"
                                         alt="Slider">
                                 </td>
                                 <td>{{$slider->status == '0'? 'Vasible':'Hidden'}}</td>
