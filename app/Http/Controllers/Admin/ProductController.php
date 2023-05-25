@@ -135,7 +135,6 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
-
     public function destroy(int $id)
     {
 
@@ -152,4 +151,3 @@ class ProductController extends Controller
         return redirect()->back()->with('message', 'Product delete');
     }
 }
-

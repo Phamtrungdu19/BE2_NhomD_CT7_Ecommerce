@@ -12,13 +12,10 @@
     <meta name="description" content="@yield('meta_description')">
     <meta name="keywords" content="@yield('meta_keyword')">
     <meta name="author" content="Ecommerce">
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <!--Styles-->
-    <link href="{{ asset('assets/css/bootstrap.min.css') }}"rel="stylesheet">
-    <link href="{{ asset('assets/css/custom.css') }}" rel="styesheet">
+
     <!-- Scripts -->
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
@@ -26,13 +23,15 @@
 
 <body>
     <div id="app">
+<<<<<<< HEAD
      @include('frontend.navbar')
+
         <main class="py-4">
             @yield('content')
         </main>
     </div>
-    <script src="{{ asset('assets/js/jquery-3.7.0.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{asset('assets/js/jquery-3.7.0.min.js') }}"></script>
+    <script src="{{asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 
 </html>
