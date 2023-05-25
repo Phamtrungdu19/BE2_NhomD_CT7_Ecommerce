@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\SliderFormRequest;
 use App\Models\Slider;
+use Illuminate\Support\File;
 
 class SliderController extends Controller
 {
@@ -22,16 +23,18 @@ class SliderController extends Controller
     {
         $validatedData = $request->validated();
         $slider = new Slider();
+
         if ($request->hasFile('image')) {
+            $uploafPath = 'uploads/sliders/';
             $file = $request->file('image');
             $ext = $file->getClientOriginalExtension();
-            $filename = time() . '.' . $ext;
-            $file->move('uploads/slider/', $filename);
-            $slider->image = $validatedData['image'];
+            $filename = time() . $ext;
+            $file->move('uploads/sliders/', $filename);
+            $slider->image =  $uploafPath . $filename;
         }
         $slider->title = $validatedData['title'];
         $slider->description = $validatedData['description'];
-        $slider->image = $validatedData['image'];
+
         $slider->status = $request->status == true ? '1' : '0';
         $slider->save();
         return redirect('admin/sliders')->with('message', 'Successfull');
