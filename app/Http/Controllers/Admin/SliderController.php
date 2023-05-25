@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\SliderFormRequest;
 use App\Models\Slider;
 use Illuminate\Support\File;
+use Livewire\Livewire;
 
 class SliderController extends Controller
 {

@@ -8,6 +8,7 @@ use Illuminate\Support\Str;
 use Livewire\WithPagination;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
+use Livewire\Livewire;
 
 class Index extends Component
 {
