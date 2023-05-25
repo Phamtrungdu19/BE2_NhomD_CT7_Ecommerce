@@ -20,15 +20,16 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/custom.css') }}">
 </head>
-
+@livewireStyles
 <body>
     <div id="app">
-<<<<<<< HEAD
+
      @include('frontend.navbar')
 
         <main class="py-4">
             @yield('content')
         </main>
+        @livewireScripts
     </div>
     <script src="{{asset('assets/js/jquery-3.7.0.min.js') }}"></script>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js') }}"></script>
