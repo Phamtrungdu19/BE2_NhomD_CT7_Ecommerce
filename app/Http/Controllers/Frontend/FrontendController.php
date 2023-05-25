@@ -6,13 +6,29 @@ use App\Models\Slider;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class FrontendController extends Controller
 {
    public function index()
    {
       $sliders = Slider::where('status', '0')->get();
-      return view('frontend.index', compact('sliders'));
+      $trendingProduct = Product::where('trending', '1')->latest()->take(15)->get();
+      return view('frontend.index', compact('sliders', 'trendingProduct'));
+   }
+   public function searchProduct(Request $request)
+   {
+      if ($request->search) {
+         $searchProduct = Product::where('name', 'LIKE', '%' . $request->search . '%')->latest()->paginate(15);
+         return view('frontend.pages.search', compact('searchProduct'));
+      } else {
+         return redirect()->back()->with('message', 'Empty Search');
+      }
+   }
+   public function newArrival()
+   {
+      $newArivalProduct = Product::latest()->take(2)->get();
+      return view('frontend.pages.new-arrival', compact('newArivalProduct'));
    }
    public function categories()
    {

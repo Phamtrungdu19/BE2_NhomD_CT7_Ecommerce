@@ -23,12 +23,14 @@
 
 <body>
     <div id="app">
-<<<<<<< HEAD
-     @include('frontend.navbar')
+     
+
+        @include('layouts.inc.frontend.navbar')
 
         <main class="py-4">
             @yield('content')
         </main>
+        @include('layouts.inc.frontend.footer')
     </div>
     <script src="{{asset('assets/js/jquery-3.7.0.min.js') }}"></script>
     <script src="{{asset('assets/js/bootstrap.bundle.min.js') }}"></script>
