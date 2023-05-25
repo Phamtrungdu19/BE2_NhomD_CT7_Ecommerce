@@ -13,7 +13,7 @@ class Product extends Model
 {
     use HasFactory;
 
-    
+
     protected $table = 'products';
 
     protected $fillable = [
@@ -41,5 +41,9 @@ class Product extends Model
     public function productsImages()
     {
         return $this->hasMany(ProductImage::class, 'product_id', 'id');
+    }
+    public function productsColors()
+    {
+        return $this->hasMany(ProductColor::class, 'product_id', 'id');
     }
 }
