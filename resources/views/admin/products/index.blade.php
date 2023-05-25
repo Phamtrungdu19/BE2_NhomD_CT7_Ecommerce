@@ -38,6 +38,7 @@
                         <td>
                             <a href="{{url('admin/products/'.$product->id.'/edit')}}" class="btn btn-success">Edit</a>
                             <a href="{{url('admin/products/'.$product->id.'/delele')}}" onclick="return confirm('Are you sure to delete?')" class="btn btn-danger">Delete</a>
+
                         </td>
                     </tr>
                     @empty
