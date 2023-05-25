@@ -13,6 +13,7 @@
 @section('content')
     <div>
         <div class="row">
+
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-header"><h4>Brands</h4></div>
@@ -26,6 +27,7 @@
             <div class="col-md-9">
 
         <div class="row">
+
             <div class="container">
                 <div class="col-md-12">
                     <h4 class="mb-4">Our Products</h4>
@@ -98,6 +100,7 @@
                         </div>
                 @endforelse
             </div>
+
         </div>
     </div>
 @endsection

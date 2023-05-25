@@ -4,17 +4,22 @@
             <div class="row">
                 <div class="col-md-5 mt-3">
                     <div class="bg-white border">
-                        @if($product->productItem)
-                        <img src="{{asset($product->productItem->image)}}" class="w-100" alt="Img">
+                        @if($product->productsImages)
+                            @php
+                                $image = $product->productsImages[0];
+                            @endphp
+                            <img src="{{asset("$image->image")}}" class="w-100" alt="Img">
                         @else
-                        NO Image
+                            NO Image
                         @endif
                     </div>
                 </div>
                 <div class="col-md-7 mt-3">
                     <div class="product-view">
                         <h4 class="product-name">
+
                             {{$product->name}}
+
                             <label class="label-stock bg-success">In Stock</label>
                         </h4>
                         <hr>
@@ -27,13 +32,15 @@
                         </div>
                         <div class="mt-2">
                             <div class="input-group">
-                                <span class="btn btn1"><i class="fa fa-minus"></i></span>
-                                <input type="text" value="1" class="input-quantity" />
-                                <span class="btn btn1"><i class="fa fa-plus"></i></span>
+                                <span class="btn btn1" wire:click="decrementQuantity"><i class="fa fa-minus">-</i></span>
+                                <input type="text"  wire:model="quantityCount" value="{{$quantityCount}}" class="input-quantity" />
+                                <span class="btn btn1" wire:click="incrementQuantity"><i class="fa fa-plus">+</i></span>
                             </div>
                         </div>
                         <div class="mt-2">
-                            <a href="" class="btn btn1"> <i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                            <button type="button" wire:click="addToCart({{$product->id}})" class="btn btn1" >
+                                 <i class="fa fa-shopping-cart"></i> Add To Cart
+                                </button>
                             <a href="" class="btn btn1"> <i class="fa fa-heart"></i> Add To Wishlist </a>
                         </div>
                         <div class="mt-3">
@@ -42,6 +49,7 @@
                                 {{$product->description}}
                             </p>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -53,9 +61,10 @@
                         </div>
                         <div class="card-body">
                             <p>
-                                {{$product->meta_description}}
+                                {{ $product->meta_description }}
                             </p>
                         </div>
+
                     </div>
                 </div>
             </div>
