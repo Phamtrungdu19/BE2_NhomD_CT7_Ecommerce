@@ -36,7 +36,6 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('/sliders/create', 'create');
         Route::post('/sliders/store', 'store');
     });
-
     Route::controller(App\Http\Controllers\Admin\BrandController::class)->group(function () {
         Route::get('/brands/', 'index');
         Route::get('/brands/create', 'create');
