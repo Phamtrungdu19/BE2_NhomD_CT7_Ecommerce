@@ -38,11 +38,9 @@ class Index extends Component
         $this->status = NULL;
         $this->brand_id = NULL;
         $this->category_id = NULL;
-
-
     }
 
-    
+
 
 
     public function storeBrand()
@@ -61,12 +59,10 @@ class Index extends Component
     public function closeModal()
     {
         $this->resetInput();
-
     }
     public function openModal()
     {
         $this->resetInput();
-
     }
 
 
@@ -98,7 +94,6 @@ class Index extends Component
     public function deleteBrand($brand_id)
     {
         $this->brand_id = $brand_id;
-
     }
 
 
@@ -108,7 +103,6 @@ class Index extends Component
         session()->flash('message', 'Brand Deleted Successfully');
         $this->dispatchBrowserEvent('close-modal');
         $this->resetInput();
->>>>>>> cart
     }
 
     public function render()
@@ -121,6 +115,5 @@ class Index extends Component
         return view('livewire.admin.brand.index2', ['brands' => $brands, 'categories' => $categories])
             ->extends('layouts.admin')
             ->section('content');
-
     }
 }

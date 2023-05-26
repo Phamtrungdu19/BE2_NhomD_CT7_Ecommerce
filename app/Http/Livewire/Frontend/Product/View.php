@@ -29,11 +29,6 @@ class View extends Component
         if (Auth::check()) {
             if ($this->product->where('id', $productId)->where('status', '0')->exists()) {
 
-                if ($this->product->quantiny > 0) {
-                    dd('DA');
-                } else {
-                    $this->dispatchBrowserEvent('message', [
-                        'text' => 'Out of Stock',
 
                 if ($this->product->quantity > 0) {
                     if ($this->product->quantity > $this->quantityCount) {
@@ -58,7 +53,6 @@ class View extends Component
                 } else {
                     $this->dispatchBrowserEvent('message', [
                         'text' => 'Please Login to add to cart',
->>>>>>> cart
                         'type' => 'warning',
                         'status' => 404
                     ]);
@@ -69,7 +63,6 @@ class View extends Component
                     'type' => 'warning',
                     'status' => 404
                 ]);
-
             }
         } else {
             $this->dispatchBrowserEvent('message', [
