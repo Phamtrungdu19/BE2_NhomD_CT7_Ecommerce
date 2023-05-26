@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-
+Route::middleware(['auth'])->group(function () {
+    Route::get('cart', [App\Http\Controllers\Frontend\CartController::class, 'index']);
+});
 
 Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->group(function () {
     Route::get('/', 'index');
@@ -67,23 +69,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::put('/category/{category}', 'update');
     });
 
-    Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function () {
-        Route::get('/products', 'index');
-        Route::get('/products/create', 'create');
-        Route::post('/products', 'store');
-        Route::get('/products/{product}/edit', 'edit');
-        Route::put('/products/{product}', 'update');
-        Route::get('products/{id}/delete', 'destroy');
-        Route::get('product-image/{product_image_id}/delete', 'destroyImage');
-    });
-    Route::controller(App\Http\Controllers\Admin\ColorController::class)->group(function () {
-        Route::get('/colors', 'index');
-        Route::get('/colors/create', 'create');
-        Route::post('/colors/create', 'store');
-        Route::get('/colors/{color}/edit', 'edit');
-        Route::put('/colors/{color}/edit', 'update');
-        Route::get('/colors/{color}/delete', 'destroy');
-    });
+
 
     Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function () {
         Route::get('/products', 'index');
