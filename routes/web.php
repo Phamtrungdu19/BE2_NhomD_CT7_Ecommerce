@@ -67,6 +67,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::post('/category', 'store');
         Route::get('/category/{category}/edit', 'edit');
         Route::put('/category/{category}', 'update');
+        Route::get('/category/{category}/delete', 'destroy');
     });
 
     Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function () {
@@ -78,7 +79,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::get('products/{id}/delete', 'destroy');
         Route::get('product-image/{product_image_id}/delete', 'destroyImage');
     });
-   
+
     Route::controller(App\Http\Controllers\Admin\ColorController::class)->group(function () {
         Route::get('/colors', 'index');
         Route::get('/colors/create', 'create');
@@ -87,6 +88,5 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::put('/colors/{color}/edit', 'update');
         Route::get('/colors/{color}/delete', 'destroy');
     });
-
 
 });

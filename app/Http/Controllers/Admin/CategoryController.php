@@ -84,4 +84,14 @@ class CategoryController extends Controller
         $category->update();
         return redirect('admin/category')->with('message',  'Category Update Successfullly');
     }
+    public function destroy($category_id)
+    {
+        $category = Category::findOrFail($category_id);
+        $path = 'uploads/category/' . $category->image;
+        if (File::exists($path)) {
+            File::delete($path);
+        }
+        $category->delete();
+        return  redirect('admin/colors')->with('message', 'Category delete Successfullly');
+    }
 }

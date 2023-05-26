@@ -10,16 +10,16 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('admin/vendors/mdi/css/materialdesignicons.min.css')}}">
-    <link rel="stylesheet" href="{{ asset('admin/vendors/base/vendor.bundle.base.css')}}">
+    <link rel="stylesheet" href="{{ url('/admin/vendors/mdi/css/materialdesignicons.min.css')}}">
+    <link rel="stylesheet" href="{{ url('/admin/vendors/base/vendor.bundle.base.css')}}">
     <!-- endinject -->
     <!-- plugin css for this page -->
-    <link rel="stylesheet" href="{{ asset('admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
+    <link rel="stylesheet" href="{{ url('/admin/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="{{ asset('admin/css/style.css')}}">
+    <link rel="stylesheet" href="{{ url('/admin/css/style.css')}}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('admin/images/favicon.png')}}" />
+    <link rel="shortcut icon" href="{{ url('/admin/images/favicon.png')}}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
 
@@ -71,19 +71,19 @@
         </div>
     </div>
     <!-- plugins:js -->
-    <script src="{{ asset('vendors/base/vendor.bundle.base.js')}}"></script>
+    <script src="{{ url('/vendors/base/vendor.bundle.base.js')}}"></script>
     <!-- Plugin js for this page-->
-    <script src="{{ asset('vendors/chart.js/Chart.min.js')}}"></script>
-    <script src="{{ asset('vendors/datatables.net/jquery.dataTables.js')}}"></script>
-    <script src="{{ asset('vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
-    <script src="{{ asset('js/off-canvas.js')}}"></script>
-    <script src="{{ asset('js/hoverable-collapse.js')}}"></script>
-    <script src="{{ asset('js/template.js')}}"></script>
+    <script src="{{ url('/vendors/chart.js/Chart.min.js')}}"></script>
+    <script src="{{ url('/vendors/datatables.net/jquery.dataTables.js')}}"></script>
+    <script src="{{ url('/vendors/datatables.net-bs4/dataTables.bootstrap4.js')}}"></script>
+    <script src="{{ url('/js/off-canvas.js')}}"></script>
+    <script src="{{ url('/js/hoverable-collapse.js')}}"></script>
+    <script src="{{ url('/js/template.js')}}"></script>
     <!-- Custom js for this page-->
-    <script src="{{ asset('js/dashboard.js')}}"></script>
-    <script src="{{ asset('js/data-table.js')}}"></script>
-    <script src="{{ asset('js/jquery.dataTables.js')}}"></script>
-    <script src="{{ asset('js/dataTables.bootstrap4.js')}}"></script>
+    <script src="{{ url('/js/dashboard.js')}}"></script>
+    <script src="{{ url('/js/data-table.js')}}"></script>
+    <script src="{{ url('/js/jquery.dataTables.js')}}"></script>
+    <script src="{{ url('/js/dataTables.bootstrap4.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
     <script src="/livewire/livewire.js"></script>
 </body>
