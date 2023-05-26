@@ -41,10 +41,10 @@
                                     <img src="{{asset("$slider->image ")}}" style="width: 150px;height: 150px;"
                                         alt="Slider">
                                 </td>
-                                <td>{{$slider->status == '0'? 'Vasible':'Hidden'}}</td>
+                                <td>{{$slider->status == '0'? 'Visible':'Hidden'}}</td>
                                 <td>
-                                    <a href="" class=" btn btn-success">Edit</a>
-                                    <a href="" class="btn btn-danger">Delete</a>
+                                    <a href="{{url('admin/slider/'.$slider->id.'/edit')}}" class=" btn btn-success">Edit</a>
+                                    <a href="{{url('admin/slider/'.$slider->id.'/delete')}}" onclick="return confirm('Are you sure to delete ?')" class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
