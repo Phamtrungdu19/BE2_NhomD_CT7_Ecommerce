@@ -4,11 +4,13 @@
             <div class="row">
                 <div class="col-md-5 mt-3">
                     <div class="bg-white border">
+
                         @if($product->productsImages)
                             @php
                                 $image = $product->productsImages[0];
                             @endphp
                             <img src="{{asset("$image->image")}}" class="w-100" alt="Img">
+
                         @else
                             NO Image
                         @endif

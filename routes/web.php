@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('cart', [App\Http\Controllers\Frontend\CartController::class, 'index']);
+});
 
 Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->group(function () {
     Route::get('/', 'index');
@@ -41,11 +44,11 @@ Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->grou
 
 
 
+
 Route::get('/', [App\Http\Controllers\Frontend\FrontendController::class, 'index']);
 Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
 Route::get('collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
 Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
-
 
 
 
@@ -75,6 +78,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::put('/category/{category}', 'update');
     });
 
+
     Route::controller(App\Http\Controllers\Admin\ProductController::class)->group(function () {
         Route::get('/products', 'index');
         Route::get('/products/create', 'create');
@@ -92,4 +96,8 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::put('/colors/{color}/edit', 'update');
         Route::get('/colors/{color}/delete', 'destroy');
     });
+
 });
+
+});
+
