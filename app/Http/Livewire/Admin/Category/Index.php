@@ -31,6 +31,8 @@ class Index extends Component
             File::delete($path);
         }
         $category->delete();
+        $session()->flash('message', 'Category Deleted');
+        $this->dispatchBrowserEvent('close-modal');
     }
     public function render()
     {
