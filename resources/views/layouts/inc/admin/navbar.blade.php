@@ -112,7 +112,7 @@
                         <div class="item-content">
                             <h6 class="font-weight-normal">New user registration</h6>
                             <p class="font-weight-light small-text mb-0 text-muted">
-                                2 days ago
+                                time
                             </p>
                         </div>
                     </a>
