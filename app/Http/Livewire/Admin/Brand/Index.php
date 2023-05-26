@@ -9,7 +9,10 @@ use Livewire\WithPagination;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
 use App\Models\Category;
-use Livewire\Livewire
+
+use Livewire\Livewire;
+
+
 class Index extends Component
 {
     use WithPagination;
@@ -24,7 +27,7 @@ class Index extends Component
             'slug' => 'require|string',
             'category_id' => 'require|integer',
             'status' => 'nullable'
-            
+
         ];
     }
 
@@ -36,9 +39,11 @@ class Index extends Component
         $this->brand_id = NULL;
         $this->category_id = NULL;
 
+
     }
 
     
+
 
     public function storeBrand()
     {
@@ -64,9 +69,12 @@ class Index extends Component
 
     }
 
+
+
     public function editbrand(int $brand_id)
     {
-        $this ->brand_id = $brand_id;
+        $this->brand_id = $brand_id;
+
         $brand = Brand::FindOrFail($brand_id);
         $this->name = $brand->name;
         $this->slug = $brand->slug;
@@ -94,12 +102,13 @@ class Index extends Component
     }
 
 
-    public function destroyBrand(){
-         Brand::findOrFail($this->brand_id)->delete();
-         session()->flash('message', 'Brand Deleted Successfully');
-          $this->dispatchBrowserEvent('close-modal'); 
-          $this->resetInput();
-
+    public function destroyBrand()
+    {
+        Brand::findOrFail($this->brand_id)->delete();
+        session()->flash('message', 'Brand Deleted Successfully');
+        $this->dispatchBrowserEvent('close-modal');
+        $this->resetInput();
+>>>>>>> cart
     }
 
     public function render()
@@ -108,8 +117,10 @@ class Index extends Component
         $categories = Category::where('status', '0')->get();
         $brands = Brand::orderBy('id', 'DESC')->paginate(10);
 
-        return view('livewire.admin.brand.index2', ['brands' => $brands, 'categories'=>$categories])
-                       ->extends('layouts.admin')
-                       ->section('content');
+
+        return view('livewire.admin.brand.index2', ['brands' => $brands, 'categories' => $categories])
+            ->extends('layouts.admin')
+            ->section('content');
+
     }
 }
