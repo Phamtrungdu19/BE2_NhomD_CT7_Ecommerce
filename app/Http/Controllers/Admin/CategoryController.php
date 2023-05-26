@@ -92,6 +92,6 @@ class CategoryController extends Controller
             File::delete($path);
         }
         $category->delete();
-        return  redirect('admin/colors')->with('message', 'Category delete Successfullly');
+        return  redirect('admin/category')->with('message', 'Category delete Successfullly');
     }
 }
