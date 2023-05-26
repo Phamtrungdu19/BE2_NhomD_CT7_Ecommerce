@@ -48,7 +48,7 @@ class FrontendController extends Controller
          return redirect()->back();
       }
    }
-   public function productView($category_slug, $product_slug)
+   public function productView(string $category_slug,string $product_slug)
    {
       $category = Category::where('slug', $category_slug)->first();
       if ($category) {
@@ -66,5 +66,18 @@ class FrontendController extends Controller
    {
       $featuredProducts = Product::where('featured', '1')->latest()->get();
       return view('frontend.pages.featured-products', compact('featuredProducts'));
+   }
+   public function destroy(int $product_id)
+   {
+      $product = Product::findOrFail($product_id);
+      if ($product-> productsImages) {
+        foreach($product-> productsImages as $image){
+         if (File::exists($image->image)) {
+            File::delete($image->image);
+         }
+        }
+      }
+      $product->delete();
+      return redirect()->back()->with('message','Product Deleted with all its image');
    }
 }

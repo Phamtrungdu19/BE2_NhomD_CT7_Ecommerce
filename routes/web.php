@@ -94,7 +94,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
         Route::post('/products', 'store');
         Route::get('/products/{product}/edit', 'edit');
         Route::put('/products/{product}', 'update');
-        Route::get('products/{id}/delete', 'destroy');
+        Route::get('products/{product_id}/delete', 'destroy');
         Route::get('product-image/{product_image_id}/delete', 'destroyImage');
     });
 

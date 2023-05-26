@@ -104,13 +104,13 @@
                 <div class="col-md-4">
                   <div class="md-3">
                     <label> trending</label><br>
-                    <input type="checkbox" name="trending" {{$brand->trending == '1' ? 'checked':''}} style="width: 50px ; height: 50px">
+                    <input type="checkbox" name="trending" {{$product->trending == '1' ? 'checked':''}} style="width: 50px ; height: 50px">
                   </div>
                 </div>
                 <div class="col-md-4">
                   <div class="md-3">
                     <label> Status</label><br>
-                    <input type="checkbox" name="status" {{$brand->status == '1' ? 'checked':''}} style="width: 50px ; height: 50px">
+                    <input type="checkbox" name="status" {{$product->status == '1' ? 'checked':''}} style="width: 50px ; height: 50px">
                   </div>
                 </div>
               </div>

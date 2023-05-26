@@ -36,8 +36,10 @@
                         <td>{{$product->quantity}} </td>
                         <td>{{$product->status == '1'?'Hidden':'Visble'}} </td>
                         <td>
-                            <a href="{{url('admin/products/'.$product->id.'/edit')}}" class="btn btn-success">Edit</a>
-                            <a href="{{url('admin/products/'.$product->id.'/delele')}}" onclick="return confirm('Are you sure to delete?')" class="btn btn-danger">Delete</a>
+                            <a href="{{url('admin/products/'.$product->id.'/edit')}}" class="btn btn-sm btn-success">Edit</a>
+                            <a href="{{url('admin/products/'.$product->id.'/delete')}}" onclick="return confirm('Are you sure to delete?')" class="btn btn-sm btn-danger">
+                              Delete
+                            </a>
 
                         </td>
                     </tr>
