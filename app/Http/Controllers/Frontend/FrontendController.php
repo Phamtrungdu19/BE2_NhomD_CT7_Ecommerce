@@ -62,4 +62,9 @@ class FrontendController extends Controller
          return redirect()->back();
       }
    }
+   public function featuredProducts()
+   {
+      $featuredProducts = Product::where('featured', '1')->latest()->get();
+      return view('frontend.pages.featured-products', compact('featuredProducts'));
+   }
 }
