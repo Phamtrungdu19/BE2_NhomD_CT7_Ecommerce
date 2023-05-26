@@ -16,7 +16,7 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <table class="table table-bordered table-stiped">
+                    <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>

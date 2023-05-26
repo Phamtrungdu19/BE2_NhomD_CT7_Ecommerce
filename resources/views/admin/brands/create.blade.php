@@ -11,9 +11,17 @@
                 </h4>
             </div>
             <div class="card-body">
-                <form action="{{url('admin/brands')}}" method="POST" >
+                <form action="{{url('admin/brands')}}" method="POST" enctype="multipart/form-data" >
                     @csrf
-
+                    <div class="md-3">
+                        <label> Category</label>
+                        <select name="category_id'" class="form-control">
+                          @foreach($categories as $category)
+                          <option value="isset({{$category->id}})">{{$category->name}}</option>
+        
+                          @endforeach
+                        </select>
+                    </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label>Name</label>
