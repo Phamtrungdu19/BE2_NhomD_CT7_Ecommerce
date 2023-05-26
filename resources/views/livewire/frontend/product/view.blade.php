@@ -43,12 +43,7 @@
                                 </button>
                             <a href="" class="btn btn1"> <i class="fa fa-heart"></i> Add To Wishlist </a>
                         </div>
-                        <div class="mt-3">
-                            <h5 class="mb-0">{{$product->small_description}}</h5>
-                            <p>
-                                {{$product->description}}
-                            </p>
-                        </div>
+                       
 
                     </div>
                 </div>
@@ -62,6 +57,12 @@
                         <div class="card-body">
                             <p>
                                 {{ $product->meta_description }}
+                            </p>
+                        </div>
+                        <div class="mt-3">
+                            <h5 class="mb-0">{{$product->small_description}}</h5>
+                            <p class="pro-description">
+                                {{$product->description}}
                             </p>
                         </div>
 

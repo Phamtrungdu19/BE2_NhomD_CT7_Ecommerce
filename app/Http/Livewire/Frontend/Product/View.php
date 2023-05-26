@@ -26,7 +26,23 @@ class View extends Component
     public function addToCart(int $productId)
     {
         if (Auth::check()) {
-            dd('asd');
+            if ($this->product->where('id', $productId)->where('status', '0')->exists()) {
+                if ($this->product->quantiny > 0) {
+                    dd('DA');
+                } else {
+                    $this->dispatchBrowserEvent('message', [
+                        'text' => 'Out of Stock',
+                        'type' => 'warning',
+                        'status' => 404
+                    ]);
+                }
+            } else {
+                $this->dispatchBrowserEvent('message', [
+                    'text' => 'Product does not exists',
+                    'type' => 'warning',
+                    'status' => 404
+                ]);
+            }
         } else {
             $this->dispatchBrowserEvent('message', [
                 'text' => 'Please Login to add to cart',

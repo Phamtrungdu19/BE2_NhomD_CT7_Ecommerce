@@ -9,14 +9,16 @@
         @foreach ($sliders as $key => $slidersItem)
         <div class="carousel-item {{$key == 0 ? 'active':''}}">
             @if($slidersItem->image)
-            <img src="{{asset($slidersItem->image)}}" class="d-block" style="width:100% ; height: 500px;" alt="...">
+            <img src="{{asset($slidersItem->image)}}" class="d-block" style="width:100% ; height:100%;" alt="...">
             <div class="carousel-caption d-none d-md-block">
                 <div class="custom-carousel-content">
-
+                    <h1>{{$slidersItem->title}}</h1>
                 </div>
             </div>
             @endif
-        </div>
+        </div>@auth
+            
+        @endauth
         @endforeach
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -28,5 +30,7 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+
+
 
 @endsection

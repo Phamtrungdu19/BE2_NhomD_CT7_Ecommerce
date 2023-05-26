@@ -15,7 +15,7 @@
 
                 <div class="product-card">
                     <div class="product-card-img">
-
+                        <label class="stock bg-danger">New</label>
                         @if($productsItem->productsImages->count()>0)
                         <a href="{{url('/collections/'.$productsItem->category->slug.'/'.$productsItem->slug)}}">
                             <img src="{{asset($productsItem->productsImages[0]->image) }}" alt="{{$productsItem->name}}"
