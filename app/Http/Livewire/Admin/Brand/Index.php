@@ -9,6 +9,7 @@ use Livewire\WithPagination;
 use Illuminate\Support\Facades\File;
 use Illuminate\View\View;
 use App\Models\Category;
+use Livewire\Livewire
 class Index extends Component
 {
     use WithPagination;
@@ -34,7 +35,6 @@ class Index extends Component
         $this->status = NULL;
         $this->brand_id = NULL;
         $this->category_id = NULL;
-
 
     }
 
