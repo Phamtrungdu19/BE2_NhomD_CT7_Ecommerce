@@ -76,7 +76,9 @@ class CheckoutShow extends Component
     {
         $this->carts = Cart::where('user_id', auth()->user()->id)->get();
         foreach ($this->carts as $cartItem) {
-            $this->totalProductAdmount += $cartItem->product->selling_price * $cartItem->quantity;
+            if ($cartItem->product) {
+                $this->totalProductAdmount += $cartItem->product->selling_price * $cartItem->quantity;
+            }
         }
         return $this->totalProductAdmount;
     }
