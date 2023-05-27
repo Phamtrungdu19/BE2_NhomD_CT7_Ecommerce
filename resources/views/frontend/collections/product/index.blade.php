@@ -44,7 +44,9 @@
                                 @endif
                                 @if ($producItem->productImages->cont() > 0)
                                     <a
-                                        href="{{ url('/collections/' . $productItem->category->slug . '/' . $productItem->slug) }}">
+
+                                        href="{{ url('/collections/' . $productItem->category->slug . '/' . $productItem->id) }}">
+
                                         <img src="{{ asset($productItem->productImages[0]->image) }}"
                                             alt="{{ $productItem->name }}">
                                     </a>
