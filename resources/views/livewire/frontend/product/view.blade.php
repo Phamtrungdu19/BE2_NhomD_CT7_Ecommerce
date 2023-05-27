@@ -34,23 +34,18 @@
                         </div>
                         <div class="mt-2">
                             <div class="input-group">
-                                <span class="btn btn1" wire:click="decrementQuantity"><i class="fa fa-minus">-</i></span>
-                                <input type="text"  wire:model="quantityCount" value="{{$quantityCount}}" class="input-quantity" />
-                                <span class="btn btn1" wire:click="incrementQuantity"><i class="fa fa-plus">+</i></span>
+                                <span class="btn btn1" wire:loading.attr="disabled"  wire:click="decrementQuantity"><i class="fa fa-minus">-</i></span>
+                                <input type="text" wire:loading.attr="disabled"  wire:model="quantityCount" value="{{$quantityCount}}" class="input-quantity" />
+                                <span class="btn btn1" wire:loading.attr="disabled"  wire:click="incrementQuantity"><i class="fa fa-plus">+</i></span>
                             </div>
                         </div>
                         <div class="mt-2">
-                            <button type="button" wire:click="addToCart({{$product->id}})" class="btn btn1" >
+                            <button type="button" wire:loading.attr="disabled" wire:click="addToCart({{$product->id}})" class="btn btn1" >
                                  <i class="fa fa-shopping-cart"></i> Add To Cart
                                 </button>
                             <a href="" class="btn btn1"> <i class="fa fa-heart"></i> Add To Wishlist </a>
                         </div>
-                        <div class="mt-3">
-                            <h5 class="mb-0">{{$product->small_description}}</h5>
-                            <p>
-                                {{$product->description}}
-                            </p>
-                        </div>
+                       
 
                     </div>
                 </div>
@@ -64,6 +59,12 @@
                         <div class="card-body">
                             <p>
                                 {{ $product->meta_description }}
+                            </p>
+                        </div>
+                        <div class="mt-3">
+                            <h5 class="mb-0">{{$product->small_description}}</h5>
+                            <p class="pro-description">
+                                {{$product->description}}
                             </p>
                         </div>
 

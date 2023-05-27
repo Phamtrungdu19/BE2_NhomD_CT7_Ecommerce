@@ -11,5 +11,5 @@
 @endsection
 
 @section('content')
-dadas
+
 @endsection

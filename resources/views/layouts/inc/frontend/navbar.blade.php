@@ -1,9 +1,9 @@
 <div class="main-navbar shadow-sm sticky-top">
     <div class="top-navbar">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                    <h5 class="brand-name">Ecommerce</h5>
+                    <h5 class="brand-name"><a class="nav-link" href="{{url('/')}}">Ecommerce </a></h5>
                 </div>
                 <div class="col-md-5 my-auto">
                     <form role="search" action="{{('search')}}" method="GET">
@@ -71,8 +71,8 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="#">
+        <div class="container">
+            <a class="navbar-brand d-block d-sm-block d-md-none d-lg-none" href="{{url('/')}}">
                 Funda Ecom
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

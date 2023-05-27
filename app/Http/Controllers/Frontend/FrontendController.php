@@ -6,6 +6,7 @@ use App\Models\Slider;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 use App\Models\Product;
 use Livewire\Livewire;
 
@@ -28,7 +29,7 @@ class FrontendController extends Controller
    }
    public function newArrival()
    {
-      $newArivalProduct = Product::latest()->take(2)->get();
+      $newArivalProduct = Product::latest()->take(6)->get();
       return view('frontend.pages.new-arrival', compact('newArivalProduct'));
    }
    public function categories()

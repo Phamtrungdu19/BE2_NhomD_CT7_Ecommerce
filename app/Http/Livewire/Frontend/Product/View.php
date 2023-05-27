@@ -28,6 +28,8 @@ class View extends Component
     {
         if (Auth::check()) {
             if ($this->product->where('id', $productId)->where('status', '0')->exists()) {
+
+
                 if ($this->product->quantity > 0) {
                     if ($this->product->quantity > $this->quantityCount) {
                         Cart::create([
@@ -55,6 +57,12 @@ class View extends Component
                         'status' => 404
                     ]);
                 }
+            } else {
+                $this->dispatchBrowserEvent('message', [
+                    'text' => 'Product does not exists',
+                    'type' => 'warning',
+                    'status' => 404
+                ]);
             }
         } else {
             $this->dispatchBrowserEvent('message', [
